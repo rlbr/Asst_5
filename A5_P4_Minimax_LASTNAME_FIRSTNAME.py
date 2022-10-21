@@ -84,8 +84,8 @@ def DG_Max_Value(divisors):
     return_action = -1111111
     for action in divisors:
         utility, nah, nodes_visited = DG_Min_Value(eliminate(action, divisors))
-        max_u = max(utility, max_u)
-        if utility == max_u:
+        if utility > max_u:
+            max_u = utility
             return_action = action
         total_nodes_visited += nodes_visited
     return [max_u, return_action, total_nodes_visited]
@@ -112,8 +112,8 @@ def DG_Min_Value(divisors):
     return_action = -1111111
     for action in divisors:
         utility, nah, nodes_visited = DG_Max_Value(eliminate(action, divisors))
-        min_u = min(utility, min_u)
-        if utility == min_u:
+        if utility < min_u:
+            min_u = utility
             return_action = action
         total_nodes_visited += nodes_visited
     return [min_u, return_action, total_nodes_visited]
