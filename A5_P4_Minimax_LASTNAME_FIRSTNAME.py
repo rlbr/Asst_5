@@ -50,6 +50,7 @@ def divisor_game_agent(n, name, turnNum, agent):
         divisor_list = eliminate(pick, divisor_list)
 
         turn_count += 1
+        print()
     if (1 + turnNum + turn_count) % 2 == 0:
         winner = player1
         loser = player2

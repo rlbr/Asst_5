@@ -51,6 +51,7 @@ def divisor_game(n, player1, player2):
         divisor_list = eliminate(pick, divisor_list)
 
         turn_count += 1
+        print()
     if turn_count % 2 == 0:
         winner = player1
         loser = player2
